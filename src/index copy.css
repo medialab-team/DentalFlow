@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DentalFlow AI Design System - Glassmorphic Dental SaaS */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --primary-navy: 223 84% 10%;
+    --primary-dark: 222 84% 8%;
+    --electric-blue: 213 94% 68%;
+    --electric-blue-light: 213 94% 75%;
+    --electric-blue-dark: 213 94% 58%;
+    
+    /* Glassmorphic Colors */
+    --glass-white: 0 0% 100%;
+    --glass-white-80: 0 0% 100%;
+    --glass-white-60: 0 0% 100%;
+    --glass-white-20: 0 0% 100%;
+    --glass-dark: 223 84% 10%;
+    --glass-dark-80: 223 84% 10%;
+    --glass-dark-60: 223 84% 10%;
+    
+    /* Background Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(223 84% 10%) 0%, hsl(213 94% 25%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(223 84% 8%) 0%, hsl(223 84% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(213 94% 68%) 0%, hsl(213 94% 58%) 100%);
+    
+    /* Glass Effects */
+    --glass-border: hsl(0 0% 100% / 0.2);
+    --glass-bg: hsl(0 0% 100% / 0.1);
+    --glass-bg-dark: hsl(223 84% 10% / 0.8);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --glass-shadow-lg: 0 20px 40px hsl(0 0% 0% / 0.4);
+    
+    /* Semantic Colors */
+    --background: 0 0% 100%;
+    --foreground: 223 84% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 223 84% 10%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 223 84% 10%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 94% 68%;
+    --radius: 12px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Glassmorphic Components */
+  .glass-card {
+    @apply relative backdrop-blur-xl rounded-2xl border;
+    background: var(--gradient-card);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-card-dark {
+    @apply relative backdrop-blur-xl rounded-2xl border;
+    background: var(--glass-bg-dark);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-button {
+    @apply relative backdrop-blur-sm rounded-xl border transition-all duration-300;
+    background: var(--gradient-button);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-button:hover {
+    box-shadow: var(--glass-shadow-lg);
+    transform: translateY(-2px);
+  }
+  
+  .glass-nav {
+    @apply fixed top-0 w-full z-50 backdrop-blur-xl border-b;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-section {
+    background: var(--gradient-section);
+  }
+  
+  /* Typography */
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-blue to-electric-blue-light bg-clip-text text-transparent;
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Scroll Triggered Animation Delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--electric-blue) / 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
